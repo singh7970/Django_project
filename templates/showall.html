@@ -53,5 +53,31 @@
             {% endfor %}
         </tbody>
     </table>
+
+    <h1> data </h1>
+    <table>
+        <thead>
+            <tr>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>PHONE</th>
+                <th>ADDRESS</th>
+                <th>password</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for contact in showdata %}
+            <tr>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.email }}</td>
+                <td>{{ contact.phone }}</td>
+                <td>{{ contact.address }}</td>
+                <td>{{ contact.password }}</td>
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>

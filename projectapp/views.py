@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import Basicform
+from .models import Basicform,DATA
 
 
 # Create your views here.
@@ -26,4 +26,31 @@ def index(request):
 def showall(request):
     show=Basicform.objects.all()
     Synt={"show":show}
+    return render(request,"showall.html",Synt)
+
+def home(request):
+    return render(request,'home.html')
+
+
+def data(request):
+    if request.method=="POST":
+        name=request.POST.get('name')
+        phone=request.POST.get('phone')
+        email=request.POST.get('email')
+        password=request.POST.get('password')
+        address=request.POST.get('address')
+        print(password)
+        DATA.objects.create(
+            name=name,
+            phone=phone,
+            email=email,
+            password=password,
+            address=address,
+        )
+        return redirect('/')
+        
+    return render(request,"data.html")
+def showDATA(request):
+    showdata=DATA.objects.all()
+    Synt={"showdata":showdata}
     return render(request,"showall.html",Synt)

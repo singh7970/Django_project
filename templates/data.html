@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fce4ec; /* Light pink background */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.2);
+            max-width: 400px;
+            width: 100%;
+            position: relative;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ff69b4; /* Pink text color */
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #ff69b4; /* Pink label text color */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #f69b4; /* Pink submit button background color */
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #ff1493; /* Darker pink on hover */
+        }
+
+        /* Funny stickers */
+        .sticker1 {
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            width: 100px;
+            z-index: -1;
+        }
+
+        .sticker2 {
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            width: 100px;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://via.placeholder.com/100" alt="Funny Sticker 1" class="sticker1">
+        <h2>User Registration</h2>
+        <form action="/" method="POST">
+            {% csrf_token %}
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="phone">Phone:</label><br>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" minlength="8" required><br>
+
+            <label for="address">Address:</label><br>
+            <textarea id="address" name="address" required></textarea><br>
+
+            <input type="submit" value="Submit">
+        </form>
+        <img src="https://via.placeholder.com/100" alt="Funny Sticker 2" class="sticker2">
+    </div>
+</body>
+</html>
