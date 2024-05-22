@@ -16,6 +16,8 @@ class DATA(models.Model):
     phone = models.CharField(max_length=15)
     password = models.CharField(max_length=128) 
     address = models.TextField()
+    def __str__(self):
+        return self.name
 
 
 

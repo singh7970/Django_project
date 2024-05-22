@@ -25,7 +25,8 @@ def index(request):
 
 def showall(request):
     show=Basicform.objects.all()
-    Synt={"show":show}
+    data=DATA.objects.all()
+    Synt={"show":show,"data":data}
     return render(request,"showall.html",Synt)
 
 def home(request):
@@ -46,11 +47,11 @@ def data(request):
             email=email,
             password=password,
             address=address,
-        )
+             )
+
         return redirect('/')
         
     return render(request,"data.html")
-def showDATA(request):
-    showdata=DATA.objects.all()
-    Synt={"showdata":showdata}
-    return render(request,"showall.html",Synt)
+
+
+
