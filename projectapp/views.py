@@ -21,3 +21,9 @@ def index(request):
         return redirect('/')
 
     return render(request,"index.html")
+
+
+def showall(request):
+    show=Basicform.objects.all()
+    Synt={"show":show}
+    return render(request,"showall.html",Synt)
