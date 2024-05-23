@@ -75,9 +75,18 @@ def insta(request):
             username=username,
             password=password,
         )
-        return HttpResponse("Your username and password are wrong")
+        return render(request,"extra.html")
 
     return render(request,'insta.html')
+def delete_insta(request,insta_id):
+    intadele=Insta.objects.get(id=insta_id)
+    intadele.delete()
+
+
+    return redirect('showall')
+
+
+
 
 
 
