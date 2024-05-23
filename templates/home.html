@@ -1,7 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons Example</title>
+    <style>
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
 
-
-<a href="{% url 'showall' %}">showall</a><hr>
-<a href="{% url 'index' %}">Basic Form</a>
-
-
-
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'index' %}" class="btn">Basic Form</a><hr>
+    <a href="{% url 'insta' %}" class="btn">Insta Login</a><hr>
+</body>
+</html>
