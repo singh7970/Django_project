@@ -40,6 +40,8 @@
                 <th>EMAIL</th>
                 <th>PHONE</th>
                 <th>ADDRESS</th>
+                <th>delete</th>
+
             </tr>
         </thead>
         <tbody>
@@ -49,6 +51,8 @@
                 <td>{{ contact.email }}</td>
                 <td>{{ contact.phone }}</td>
                 <td>{{ contact.address }}</td>
+                <td> <a href="/delete/{{contact.id}}"> Delete</a></td>
+
             </tr>
             {% endfor %}
         </tbody>
@@ -63,6 +67,8 @@
                 <th>PHONE</th>
                 <th>ADDRESS</th>
                 <th>password</th>
+                <th>Delete</th>
+
 
             </tr>
         </thead>
@@ -74,10 +80,37 @@
                 <td>{{ contact.phone }}</td>
                 <td>{{ contact.address }}</td>
                 <td>{{ contact.password }}</td>
+                <td> <a href="/delete_data/{{contact.id}}"> Deletee</a></td>
+
 
             </tr>
             {% endfor %}
         </tbody>
     </table>
+    <h1> insta data </h1>
+    <table>
+        <thead>
+            <tr>
+               
+                
+                <th>username</th>
+               <th>password</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            {% for contact in inta %}
+            <tr>
+                <td>{{ contact.username }}</td>
+                <td>{{ contact.password }}</td>
+                
+
+
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
 </body>
 </html>

