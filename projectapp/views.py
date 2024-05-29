@@ -10,7 +10,7 @@ def index(request):
         email=request.POST.get('email')
         phone=request.POST.get('phone')
         address=request.POST.get('address')
-        print(name,email,phone)
+        print(name,email,phone,address)
         #save data to the database
         Basicform.objects.create(
             name=name,
@@ -52,7 +52,8 @@ def data(request):
         email=request.POST.get('email')
         password=request.POST.get('password')
         address=request.POST.get('address')
-        print(password)
+        print(name)
+        
         DATA.objects.create(
             name=name,
             phone=phone,

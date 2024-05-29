@@ -88,10 +88,10 @@
 </head>
 <body>
     <div class="container">
-        <img src="https://via.placeholder.com/100" alt="Funny Sticker 1" class="sticker1">
+       
         <h2>User Registration</h2>
-        <form action="/" method="POST">
-            {% csrf_token %}
+        <form  method="POST">
+           {% csrf_token %}
             <label for="name">Name:</label><br>
             <input type="text" id="name" name="name" required><br>
 
@@ -105,12 +105,13 @@
             <input type="password" id="password" name="password" minlength="8" required><br>
 
             <label for="address">Address:</label><br>
-            <textarea id="address" name="address" required></textarea><br>
+            <textarea id="address" name="address" required></textarea><br> 
 
             <input type="submit" value="Submit">
         </form>
-        <img src="https://via.placeholder.com/100" alt="Funny Sticker 2" class="sticker2">
-    </div>
+   
+    </div> 
+   
 </body>
 </html>
 <a href="{% url 'index' %}">Basic Form</a>
